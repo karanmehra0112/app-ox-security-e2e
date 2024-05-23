@@ -5,8 +5,8 @@ import DashboardPage from "../pages/DashboardPage";
 test.beforeEach(async ({ page }) => {
   // Set up the login page and perform login before each test
   const loginPage = new LoginPage(page);
-  loginPage.visit();
-  loginPage.performLogin({
+  await loginPage.visit();
+  await loginPage.performLogin({
     username: process.env.USER as string,
     password: process.env.SECRET as string,
   });
